@@ -2,15 +2,7 @@
 Build website company profile with python, css framework materialize, bootstrap adminlte
 
 List Image:
-
-1.Website
-2.Login
-3.Register
-4.Dashboard
-5.Header
-6.Jumbotron
-7.Pesan
-8.Tentang
+Website, Login, Register, Dashboard
 
 
 1.Website
