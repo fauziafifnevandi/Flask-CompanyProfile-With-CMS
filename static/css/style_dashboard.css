@@ -1,0 +1,35 @@
+.moss-1 {
+    background-color: #006270;
+}
+
+.moss-2 {
+    background-color: #009394;
+}
+
+.moss-3 {
+    background-color: #00E0C7;
+}
+
+.moss-4 {
+    background-color: #fff;
+}
+
+.moss-5 {
+    color: #fff;
+}
+
+.info a:hover {
+    color: #009394;
+}
+
+a, p, span , i,tr {
+    color:#fff
+}
+
+.card-header {
+    background-color:#009394 ;
+}
+
+.moss-6 {
+    background-color:#e0e0e0 ;
+}

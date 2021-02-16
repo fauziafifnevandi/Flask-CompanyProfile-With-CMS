@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/style_login.css') }}">
+
+     <title>ReithA Cake</title>
+  </head>
+  <body>
+
+    <section id="login" class="login moss-1 scrollspy">
+        <div class="container">
+            <div class="logo center-align">
+                <img src="{{ url_for('static', filename='img/dashboard/logo_login.jpg') }}" alt="">
+            </div>
+          <h3 class="light moss-1 center">Halaman Login</h3>
+          <div class="row">
+            <div class="col m6 offset-m3 s12">
+              <form action="{{ url_for('login') }}" method="POST">
+                <div class="card-panel">
+                  <div class="input-field">
+                    <input type="text" name="username" id="username" placeholder="Username" required class="input validate">
+                    <label for="username">Username</label>
+                  </div>
+                  <div class="input-field">
+                    <input type="password" name="password" id="password" placeholder="Password" required class="input validate">
+                    <label for="password">Password</label>
+                  </div>
+                  <div class="row">
+                    <div class="col s6">
+                        <div class="switch">
+                            <label>
+                              <input type="checkbox">
+                              <span class="lever"></span>
+                              Ingat Saya
+                            </label>
+                          </div>
+                    </div>
+                    <div class="col s6 lig grey-text text-grey">
+                        <a href="#">
+                            <i class="material-icons">https</i> 
+                        </a>
+                        Lupa Password?
+                    </div>
+                  </div>
+                  <div class="row">
+                    <a href="{{ url_for('register') }}" class="col s6 lig grey-text text-grey">Register</a>
+                    <a href="{{ url_for('main') }}" class="col s6 lig grey-text text-grey">Website</a>
+                  </div>
+                  <div class="msg">{{ msg }}</div>
+                  <button type="submit" value="Login" class="btn moss-2">Login</button>
+                </div>
+              </form>
+            </div> 
+          </div>
+        </div>
+
+        <footer class="moss-1 white-text center">
+            <p>RiethA Cake. Copyright 2021</p>
+          </footer>
+      </section>
+
+      
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+  </body>
+</html>
+      

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}"  media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <title>ReithA Cake</title>
+  </head>
+
+  <body id="home" class="scrollspy home">
+    <!-- navbar -->
+    <div class="navbar-fixed">
+      <!-- blue darken-2 -->
+        <nav class="moss-1">   
+            <div class="container">
+                <div class="nav-wrapper home">
+                  <img src="{{ url_for('static', filename='img/loga.jpg') }}" href="#home">
+                    <a href="#home" class="brand-logo">RiethA Cake</a>
+                    <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#clients">Klien</a></li>
+                    <li><a href="#services">Pelayanan</a></li>
+                    <li><a href="#portfolio">Produk</a></li>
+                    <li><a href="#contact">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+      </div>
+
+      <!-- sidenav -->
+      <ul class="sidenav" id="mobile-nav">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#clients">Our Clients</a></li>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+      <!-- akhir navbar -->
+
+
+      <!-- slider -->
+      <div class="slider">
+        <ul class="slides">
+          <li>
+            <img src="{{ url_for('static', filename='img/slider/1.jpg') }}"> <!-- random image -->
+            <div class="caption center-align">
+              <h3>Rayakan Moment Terbaikmu Bersama RiethA Cake</h3>
+              <h5 class="light grey-text text-lighten-3">Setiap Rasa Adalah Cerita.</h5>
+            </div>
+          </li>
+          <li>
+              <img src="{{ url_for('static', filename='img/slider/2.jpg') }}"> <!-- random image -->
+              <div class="caption center-align">
+                <h3>Rayakan Moment Terbaikmu Bersama RiethA Cake</h3>
+                <h5 class="light grey-text text-lighten-3">Setiap Rasa Adalah Cerita.</h5>
+              </div>
+          </li>
+          <li>
+              <img src="{{ url_for('static', filename='img/slider/3.jpg') }}"> <!-- random image -->
+              <div class="caption center-align">
+                <h3>Rayakan Moment Terbaikmu Bersama RiethA Cake</h3>
+                <h5 class="light grey-text text-lighten-3">Setiap Rasa Adalah Cerita.</h5>
+              </div>
+          </li>
+        </ul>
+      </div>
+      <!-- akhir slider -->
+
+      <!-- about us -->
+      <section id="about" class="about scrollspy grey lighten-3">
+        <div class="container">
+          <div class="row">
+            <h3 class="center light grey-text text-darken-3">Tentang</h3>
+            <div class="col m6 light">
+              <h5>Percayakan Pada Profesional</h5>
+              <p class="about-page">
+                Perusahaan kami merupakan profesional yang bergerak pada kuliner roti dengan kualitas terbaik. Dengan melayani berbagai macam aneka roti baik sebagai hadiah maupun konsumsi kami siap memberikan yang terbaik untuk anda.  
+              </p>
+            </div>
+            <div class="col m6 light">
+              <p>KUALITAS</p>
+                <div class="progress">
+                  <div class="determinate" style="width: 95%">
+                  </div>
+                </div>
+              <p>PROFESIONAL</p>
+                <div class="progress">
+                  <div class="determinate" style="width: 85%">
+                  </div>
+                </div>
+              <p>KECEPATAN</p>
+                <div class="progress">
+                  <div class="determinate" style="width: 85%">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- akhir about -->
+
+      <!-- clients -->
+      <div id="clients" class="parallax-container scrollspy">
+        <div class="parallax"><img src="{{ url_for('static', filename='img/slider/4.png') }}"></div>
+
+        <div class="container clients">
+          <h3 class="center light text-darken3">Klien</h3>
+          <div class="row">
+            <div class="col m4 s12 center">
+              <img src="{{ url_for('static', filename='img/clients/gofood.png') }}" alt="gojek">
+            </div>
+            <div class="col m4 s12 center">
+              <img src="{{ url_for('static', filename='img/clients/grabfood.png') }}" alt="tokopedia">
+            </div>
+            <div class="col m4 s12 center">
+              <img src="{{ url_for('static', filename='img/clients/shope.png') }}" alt="traveloka">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- akhir clients -->
+
+      <!-- services -->
+      <section id="services" class="services scrollspy grey lighten-3">
+        <div class="container">
+          <div class="row">
+            <h3 class="light center text-darken3">Pelayanan</h3>
+            <div class="col m4 s12">
+              <div class="card-panel center">
+                <i class="material-icons medium">verified_user</i>
+                <h5>Kualitas</h5>
+                <p>
+                  Dengan menggunakan bahan berkualitas untuk menjaga kualitas produk
+                </p>
+              </div>
+            </div>
+            <div class="col m4 s12">
+              <div class="card-panel center">
+                <i class="material-icons medium">work</i>
+                <h5>Profesional</h5>
+                <p>
+                  Berpengalaman dalam melayani berbagai macam produk bagi konsumen kami
+                </p>
+              </div>
+            </div>
+            <div class="col m4 s12">
+              <div class="card-panel center">
+                <i class="material-icons medium">access_time</i>
+                <h5>Kecepatan</h5>
+                <p>
+                  Melayani dengan kecepatan yang sesuai dengan waktu pesanan untuk melayani anda semua
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- akhir servies -->
+
+   
+
+      <!-- portfolio -->
+      <section id="portfolio" class="portfolio scrollspy">
+        <div class="container">
+          <h3 class="light center text-darken3">Produk</h3>
+          <div class="row">
+            <div class="col m3 s12">
+              <img src="{{ url_for('static', filename='img/portfolio/1.jpg') }}" class="responsive-img materialboxed">
+            </div>
+            <div class="col m3 s12">
+              <img src="{{ url_for('static', filename='img/portfolio/2.jpg') }}" class="responsive-img materialboxed">
+            </div>
+            <div class="col m3 s12">
+              <img src="{{ url_for('static', filename='img/portfolio/3.jpg') }}" class="responsive-img materialboxed">
+            </div>
+            <div class="col m3 s12">
+              <img src="{{ url_for('static', filename='img/portfolio/4.jpg') }}" class="responsive-img materialboxed">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col m3 s12">
+              <img src="{{ url_for('static', filename='img/portfolio/5.jpg') }}" class="responsive-img materialboxed">
+            </div>
+            <div class="col m3 s12">
+              <img src="{{ url_for('static', filename='img/portfolio/6.jpg') }}" class="responsive-img materialboxed">
+            </div>
+            <div class="col m3 s12">
+              <img src="{{ url_for('static', filename='img/portfolio/7.jpg') }}" class="responsive-img materialboxed">
+            </div>
+            <div class="col m3 s12">
+              <img src="{{ url_for('static', filename='img/portfolio/8.jpg') }}" class="responsive-img materialboxed">
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- akhir portfolio -->
+
+      <!-- contact us -->
+      <section id="contact" class="contact grey lighten-3 scrollspy">
+        <div class="container">
+          <h3 class="light text-darken-3 center">Hubungi Kami</h3>
+          <div class="row">
+            <div class="col m5 s12">
+              <div class="card-panel moss-2 center white-text">
+                <i class="material-icons">email</i>
+                <h4>Kontak</h4>
+                <p>
+                  Fitur layanan hubung untuk memberikan pesan dari para pelanggan kepada kami. 
+                </p>
+              </div>
+              <ul class="collection with-header">
+                <li class="collection-header">Informasi Kantor</li>
+                <li class="collection-item">RiethA Cake</li>
+                <li class="collection-item">Jl.Setia Budi No.12</li>
+                <li class="collection-item">Jakarta Pusat, Indonesia</li>
+              </ul>
+            </div>
+
+            <div class="col m7 s12">
+              <form>
+                <div class="card-panel">
+                  <h5>Silakan Untuk Mengisi Form</h5>
+                  <div class="input-field">
+                    <input type="text" name="name" id="name" required class="validate">
+                    <label for="name">Nama</label>
+                  </div>
+                  <div class="input-field">
+                    <input type="email" name="email" id="email" required class="validate">
+                    <label for="email">Email</label>
+                  </div>
+                  <div class="input-field">
+                    <input type="tel" name="phone" id="phone" required class="validate">
+                    <label for="tel">Nomor Handphone</label>
+                  </div>
+                  <div class="input-field">
+                    <textarea name="message" id="message" class="materialize-textarea validate" required></textarea>
+                    <label for="message">Pesan</label>
+                  </div>
+                  <button type="submit" class="btn moss-2">Send</button>
+                </div>
+              </form>
+            </div> 
+          </div>
+        </div>
+      </section>
+      <!-- akhir contact us -->
+      
+      <footer class="moss-1 white-text center">
+        <p>FauziAfifNevandi. Copyright 2021</p>
+      </footer>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+.slider h3,
+.slider h5,
+.clients h3 {
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, .5);
+}
+
+body .moss-1 {
+    background-color: #006270;
+}
+
+.moss-2 {
+    background-color: #009394;
+}
+
+.moss-3 {
+    background-color: #00E0C7;
+}
+
+.moss-4 {
+    background-color: #fff;
+}
+
+
+body .home img {
+    max-width: 55px;
+    min-height: 55px
+}
+
+
+/* Login Dashboard */
+
+.login img {
+    padding-top: 20px;
+    height: 9%;
+    width: 9%;
+}
+
+.bg-login {
+    background-image: linear-gradient(to right,#006270, #00E0C7 );
+}
+
+.login img {
+    align-items: center;
+}
+
+.login h3 {
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, .5);
+}
+
+.login {
+    padding-bottom: auto;
+}
+
+footer {
+    padding: 37px;
+}
