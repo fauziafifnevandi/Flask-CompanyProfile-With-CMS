@@ -1,5 +1,5 @@
 # Flask-CompanyProfile-With-CMS
-Build website company profile with python, css framework materialize, bootstrap adminlte
+Build website company profile with python (flask), css framework materialize and bootstrap adminlte
 
 List Image:
 Website, Login, Register, Dashboard
