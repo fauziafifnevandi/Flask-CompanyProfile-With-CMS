@@ -21,7 +21,7 @@ mysql = MySQL(app)
 def main():
     return render_template('index.html')
 
-@app.route('/pythonlogin/', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     # Output message if something goes wrong...
     msg = ''
@@ -49,7 +49,7 @@ def login():
 
     return render_template('login.html', msg=msg)
 
-@app.route('/pythonlogin/logout')
+@app.route('/logout')
 def logout():
     # Remove session data, this will log the user out
    session.pop('loggedin', None)
@@ -60,7 +60,7 @@ def logout():
    
 
 # http://localhost:5000/pythinlogin/register - this will be the registration page, we need to use both GET and POST requests
-@app.route('/pythonlogin/register', methods=['GET', 'POST'])
+@app.route('/register', methods=['GET', 'POST'])
 def register():
     # Output message if something goes wrong...
     msg = ''
@@ -94,7 +94,7 @@ def register():
     return render_template('register.html', msg=msg)
 
 
-@app.route('/pythonlogin/home')
+@app.route('/dashboard')
 def home():
     # Check if user is loggedin
     if 'loggedin' in session:
@@ -104,7 +104,7 @@ def home():
     return redirect(url_for('login'))
 
 
-@app.route('/pythonlogin/profile')
+@app.route('/dashboard/profile')
 def profile():
     # Check if user is loggedin
     if 'loggedin' in session:
@@ -116,6 +116,22 @@ def profile():
         return render_template('profile.html', account=account)
     # User is not loggedin redirect to login page
     return redirect(url_for('login'))
+
+@app.route('/dashboard/header')
+def header():
+    return render_template('header.html')
+
+@app.route('/dashboard/jumbotron')
+def jumbotron():
+    return render_template('jumbotron.html')
+
+@app.route('/dashboard/pesan')
+def pesan():
+    return render_template('pesan.html')
+
+@app.route('/dashboard/tentang')
+def tentang():
+    return render_template('tentang.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
