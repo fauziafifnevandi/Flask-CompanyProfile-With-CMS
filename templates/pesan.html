@@ -215,7 +215,7 @@
                   <table class="table table-bordered">
                     <thead>
                       <tr>
-                        <th style="width: 10px">#</th>
+                        <th style="width: 10px">ID</th>
                         <th>Nama</th>
                         <th>Email</th>
                         <th>Nomor Handphone</th>
@@ -223,12 +223,13 @@
                       </tr>
                     </thead>
                     <tbody>
+                      {% for data in pesan %}
                       <tr>
-                        <td>1.</td>
-                        <td>Fauzi Afif Nevandi</td>
-                        <td>fauziafifnevandi@nevandi.com</td>
-                        <td>089999999</td>
-                        <td>Meskipun sudah lama tidak menikmati roti RiethA Cake, namun kualitas dan rasa tidak pernah lupa</td>
+                        <td>{{data.id}}</td>
+                        <td>{{data.nama}}</td>
+                        <td>{{data.email}}</td>
+                        <td>{{data.hp}}</td>
+                        <td>{{data.pesan}}</td>
                       </tr>
                       <tr>
                         <td>1.</td>
@@ -244,6 +245,7 @@
                         <td>089999999</td>
                         <td>Meskipun sudah lama tidak menikmati roti RiethA Cake, namun kualitas dan rasa tidak pernah lupa</td>
                       </tr>
+                      {% endfor %}
                     </tbody>
                   </table>
                     </div>

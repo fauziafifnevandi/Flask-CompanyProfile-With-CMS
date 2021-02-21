@@ -19,6 +19,8 @@ mysql = MySQL(app)
 
 @app.route('/')
 def main():
+    cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cur.close()
     return render_template('index.html')
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -127,7 +129,14 @@ def jumbotron():
 
 @app.route('/dashboard/pesan')
 def pesan():
-    return render_template('pesan.html')
+    cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cur.execute('SELECT * FROM pesan')
+    data = cur.fetchall()
+
+    cur.close()
+    return render_template('pesan.html', pesan = data)
+    
+
 
 @app.route('/dashboard/tentang')
 def tentang():
