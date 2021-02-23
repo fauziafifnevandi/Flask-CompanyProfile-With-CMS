@@ -20,7 +20,9 @@
             <div class="container">
                 <div class="nav-wrapper home">
                   <img src="{{ url_for('static', filename='img/loga.jpg') }}" href="#home">
-                    <a href="#home" class="brand-logo">RiethA Cake</a>
+                  {% for headers in header %}  
+                  <a href="#home" class="brand-logo">{{headers.nama}}</a>
+                  {% endfor %}
                     <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
                     <li><a href="#about">Tentang</a></li>

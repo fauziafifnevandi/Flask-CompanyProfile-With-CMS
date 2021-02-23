@@ -1,7 +1,11 @@
-from flask import Flask, render_template, request, redirect, url_for, session, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session, redirect, url_for, Response
 from flask_mysqldb import MySQL
+from werkzeug.utils import secure_filename
 import MySQLdb.cursors
 import re
+import os
+
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 
@@ -20,8 +24,10 @@ mysql = MySQL(app)
 @app.route('/')
 def main():
     cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cur.execute('SELECT * FROM header')
+    header = cur.fetchall()
     cur.close()
-    return render_template('index.html')
+    return render_template('index.html', header=header)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -96,7 +102,7 @@ def register():
     return render_template('register.html', msg=msg)
 
 
-@app.route('/dashboard')
+@app.route('/dashboard', methods=['GET', 'POST'])
 def home():
     # Check if user is loggedin
     if 'loggedin' in session:
@@ -119,9 +125,47 @@ def profile():
     # User is not loggedin redirect to login page
     return redirect(url_for('login'))
 
+@app.route('/header/edit/<id>', methods=[ 'POST','GET'])
+def header_edit(id):
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT * FROM header WHERE id = %s', (id,))
+    data = cursor.fetchall()
+    cursor.close()
+    print(data[0])
+    return render_template('header_edit.html', header = data[0])
+
+
+#update beta
+@app.route('/header/update/<id>', methods=[ 'POST'])
+def header_update(id):
+    if request.method == 'POST':
+        nama = request.form['nama']
+        
+        gambar = request.files['gambar']
+        #os.makedirs(os.path.join(app.instance_path, ''), exist_ok=True)
+        #gambar.save(os.path.join(app.instance_path, '', secure_filename(gambar.filename)))
+        
+        gambar.save(secure_filename(gambar.filename))
+        gambar = gambar.filename
+
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('UPDATE header SET nama = %s, gambar = %s WHERE id = %s', (nama, gambar, id,))
+        mysql.connection.commit()
+        cursor.close()
+        return redirect(url_for('header'))
+
+@app.route('/img/<img_id>')
+def serve_img(img_id):
+    pass # look up via id, create r
+
 @app.route('/dashboard/header')
 def header():
-    return render_template('header.html')
+    cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cur.execute('SELECT * FROM header')
+    data = cur.fetchall()
+    cur.close()
+    return render_template('header.html', header = data)
+
 
 @app.route('/dashboard/jumbotron')
 def jumbotron():
