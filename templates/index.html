@@ -12,16 +12,17 @@
     <title>ReithA Cake</title>
   </head>
 
-  <body id="home" class="scrollspy home">
+  <body id="home" class="scrollspy">
     <!-- navbar -->
-    <div class="navbar-fixed">
+    <div class="navbar-fixed fauzi">
       <!-- blue darken-2 -->
         <nav class="moss-1">   
             <div class="container">
                 <div class="nav-wrapper home">
-                  <img src="{{ url_for('static', filename='img/loga.jpg') }}" href="#home">
-                  {% for headers in header %}  
-                  <a href="#home" class="brand-logo">{{headers.nama}}</a>
+                  {% for data in header %} 
+                  <img src="{{ url_for('static', filename=data.gambar) }}" style="max-width:63px;max-height:63px" href="#home">
+                   
+                  <a href="#home" class="brand-logo">{{data.nama}}</a>
                   {% endfor %}
                     <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
@@ -227,24 +228,24 @@
             </div>
 
             <div class="col m7 s12">
-              <form>
+              <form action="{{ url_for('kirimpesan')}}" method="POST">
                 <div class="card-panel">
                   <h5>Silakan Untuk Mengisi Form</h5>
                   <div class="input-field">
-                    <input type="text" name="name" id="name" required class="validate">
-                    <label for="name">Nama</label>
+                    <input type="text" name="nama" id="name" required class="validate">
+                    <label for="nama">Nama</label>
                   </div>
                   <div class="input-field">
                     <input type="email" name="email" id="email" required class="validate">
                     <label for="email">Email</label>
                   </div>
                   <div class="input-field">
-                    <input type="tel" name="phone" id="phone" required class="validate">
-                    <label for="tel">Nomor Handphone</label>
+                    <input type="tel" name="hp" id="hp" required class="validate">
+                    <label for="hp">Nomor Handphone</label>
                   </div>
                   <div class="input-field">
-                    <textarea name="message" id="message" class="materialize-textarea validate" required></textarea>
-                    <label for="message">Pesan</label>
+                    <input type="tel" name="pesan" id="pesan" required class="validate">
+                    <label for="pesan">Pesan</label>
                   </div>
                   <button type="submit" class="btn moss-2">Send</button>
                 </div>

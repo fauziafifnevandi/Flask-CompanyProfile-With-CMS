@@ -4,8 +4,11 @@ from werkzeug.utils import secure_filename
 import MySQLdb.cursors
 import re
 import os
+from base64 import b64encode
+from os.path import join, dirname, realpath
 
-from werkzeug.utils import secure_filename
+UPLOADS_PATH = join(dirname(realpath(__file__)), 'static')
+
 
 app = Flask(__name__)
 
@@ -133,30 +136,34 @@ def header_edit(id):
     cursor.close()
     print(data[0])
     return render_template('header_edit.html', header = data[0])
-
+    
 
 #update beta
 @app.route('/header/update/<id>', methods=[ 'POST'])
 def header_update(id):
+
     if request.method == 'POST':
         nama = request.form['nama']
         
+        #gambar = request.files['gambar']
+        #os.makedirs(os.path.join(app.instance_path, 'none'), exist_ok=True)
+        #gambar.save(os.path.join(app.instance_path, 'none', secure_filename(gambar.filename)))
+
+        #gambar = request.files['gambar']
+        #gambar.save(secure_filename(gambar.filename))
+        #gambar = gambar.filename
+
         gambar = request.files['gambar']
-        #os.makedirs(os.path.join(app.instance_path, ''), exist_ok=True)
-        #gambar.save(os.path.join(app.instance_path, '', secure_filename(gambar.filename)))
-        
-        gambar.save(secure_filename(gambar.filename))
+        gambar.save(os.path.join(UPLOADS_PATH, secure_filename(gambar.filename)))
         gambar = gambar.filename
 
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('UPDATE header SET nama = %s, gambar = %s WHERE id = %s', (nama, gambar, id,))
         mysql.connection.commit()
+  
         cursor.close()
         return redirect(url_for('header'))
 
-@app.route('/img/<img_id>')
-def serve_img(img_id):
-    pass # look up via id, create r
 
 @app.route('/dashboard/header')
 def header():
@@ -166,6 +173,18 @@ def header():
     cur.close()
     return render_template('header.html', header = data)
 
+@app.route('/kirimpesan', methods=['GET', 'POST'])
+def kirimpesan():
+    if request.method == 'POST':
+        nama = request.form['nama']
+        email = request.form['email']
+        hp = request.form['hp']
+        pesan = request.form['pesan']
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('INSERT INTO pesan VALUES (NULL, %s, %s, %s, %s)', (nama, email, hp, pesan,))
+        mysql.connection.commit()
+
+    return redirect(url_for('main'))
 
 @app.route('/dashboard/jumbotron')
 def jumbotron():
@@ -180,7 +199,10 @@ def pesan():
     cur.close()
     return render_template('pesan.html', pesan = data)
     
-
+@app.route('/img/<int:img_id>')
+def serve_img(img_id):
+    
+    pass
 
 @app.route('/dashboard/tentang')
 def tentang():

@@ -219,6 +219,7 @@
                       <th>Nama Header</th>
                       <th>Gambar</th>
                       <th style="width: 40px">Action</th>
+                
                     </tr>
                   </thead>
                   <tbody>
@@ -226,7 +227,7 @@
                     <tr>
                       <td>#</td>
                       <td>{{data.nama}}</td>
-                      <td>{{data.gambar}}</td>
+                      <td><img src="{{ url_for('static', filename=data.gambar) }}" class="img-fluid" style="max-width:63px;max-height:63px" alt=""></td>
                       <td>
                         <a href="/header/edit/{{data.id}}">
                           <button type="submit" class="btn btn-primary moss-3">Edit</button>
