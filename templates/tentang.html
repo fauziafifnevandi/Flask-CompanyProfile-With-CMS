@@ -206,46 +206,54 @@
     <!-- /.content-header -->
 
     <section class="content">
-        <div class="container-fluid">
-                    <div class="card card-primary">
-                        <!-- /.card-header -->
-                        <!-- form start -->
-                        <form>
-                        <div class="card-body moss-2">
-                            <div class="form-group moss-5">
-                                <label for="exampleInputEmail1">Caption</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukan Nama Header">
-                            </div>
-                            <div class="form-group moss-5">
-                                <label for="exampleInputEmail1">Sub Caption 1</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukan Nama Header">
-                            </div>
-                            <div class="form-group moss-5">
-                                <label for="exampleInputEmail1">Sub Caption 2</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukan Nama Header">
-                            </div>
-                            <div class="form-group moss-5">
-                                <label for="exampleInputEmail1">Sub Caption 3</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukan Nama Header">
-                            </div>
-                        </div>
-                        <!-- /.card-body -->
-                
-                        <div class="card-footer moss-2">
-                            <button type="submit" class="btn btn-primary moss-3">Submit</button>
-                        </div>
-                        </form>
-                    </div>
-                    </div>
-                  </form>
-                </div>
-                <!-- /.card-body -->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <!-- /.card-header -->
+              <div class="card-body moss-2">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Judul</th>
+                      <th>Isi</th>
+                      <th>Moto 1</th>
+                      <th>Moto 2</th>
+                      <th>Moto 3</th>
+                      <th style="width: 40px">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for data in tentang %}
+                    <tr>
+                      <td>{{data.judul}}</td>
+                      <td>{{data.isi}}</td>
+                      <td>{{data.moto1}}</td>
+                      <td>{{data.moto2}}</td>
+                      <td>{{data.moto3}}</td>
+                      <td>
+                        <a href="/dashboard/tentang/edit/{{data.id}}">
+                          <button type="submit" class="btn btn-primary moss-3">Edit</button>
+                        </a>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
               </div>
-
-
-    <!-- general form elements -->
-
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+
+  <!-- general form elements -->
+
+
   <!-- /.content-wrapper -->
 
   <!-- Control Sidebar -->
@@ -267,26 +275,26 @@
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- overlayScrollbars -->
-<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<script src="{{ url_for('static', filename='plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.js"></script>
+<script src="{{ url_for('static', filename='dist/js/adminlte.js') }}"></script>
 
 <!-- PAGE PLUGINS -->
 <!-- jQuery Mapael -->
-<script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-<script src="plugins/raphael/raphael.min.js"></script>
-<script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
-<script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
+<script src="{{ url_for('static', filename='plugins/jquery-mousewheel/jquery.mousewheel.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/raphael/raphael.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/jquery-mapael/jquery.mapael.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/jquery-mapael/maps/usa_states.min.js') }}"></script>
 <!-- ChartJS -->
-<script src="plugins/chart.js/Chart.min.js"></script>
+<script src="{{ url_for('static', filename='plugins/chart.js/Chart.min.js') }}"></script>
 
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard2.js"></script>
+<script src="{{ url_for('static', filename='dist/js/pages/dashboard2.js') }}"></script>
 </body>
 </html>

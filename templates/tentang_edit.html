@@ -17,15 +17,28 @@
         <div class="row">
             <div class="col-md-4 offset-md-4">
               <div class="card card-body moss-1">
-                <form action="/dashboard/header/update/{{header.id}}"  method="POST" enctype="multipart/form-data">
+                <form action="/dashboard/tentang/update/{{tentang.id}}"  method="POST" enctype="multipart/form-data">
                   <div class="form-group">
-                    <label for="text" class="moss-5">Nama Header</label>
-                    <input type="text" name="nama" value="{{header.nama}}" class="form-control">
+                    <label for="text" class="moss-5">Judul</label>
+                    <input type="text" name="judul" value="{{tentang.judul}}" class="form-control">
                   </div>
                   <div class="form-group">
-                    <label for="text" class="moss-5">Gambar Header</label>
-                    <input type="file" name="gambar" value="{{header.gambar}}" class="form-control">
+                    <label for="text" class="moss-5">Isi</label>
+                    <input type="text" name="isi" value="{{tentang.isi}}" class="form-control">
                   </div>
+                  <div class="form-group">
+                    <label for="text" class="moss-5">Moto 1</label>
+                    <input type="text" name="moto1" value="{{tentang.moto1}}" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="text" class="moss-5">Moto 2</label>
+                    <input type="text" name="moto2" value="{{tentang.moto2}}" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="text" class="moss-5">Moto 3</label>
+                    <input type="text" name="moto3" value="{{tentang.moto3}}" class="form-control">
+                  </div>
+                  
                     <button type="submit" class="btn btn-primary btn-block moss-3">
                       Update
                     </button>

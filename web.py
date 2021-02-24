@@ -1,19 +1,17 @@
-from flask import Flask, render_template, request, redirect, url_for, session, redirect, url_for, Response
+from flask import Flask, render_template, request, flash, redirect, url_for, session, redirect, url_for, Response
 from flask_mysqldb import MySQL
 from werkzeug.utils import secure_filename
 import MySQLdb.cursors
 import re
 import os
-from base64 import b64encode
 from os.path import join, dirname, realpath
 
 UPLOADS_PATH = join(dirname(realpath(__file__)), 'static')
 
-
 app = Flask(__name__)
 
 # Change this to your secret key (can be anything, it's for extra protection)
-app.secret_key = 'your secret key'
+app.secret_key = 'bAkSoBuLaTdIGoReNgLiMaRaTuSanHaLo'
 
 # Enter your database connection details below
 app.config['MYSQL_HOST'] = 'localhost'
@@ -24,54 +22,31 @@ app.config['MYSQL_DB'] = 'pythonlogin'
 # Intialize MySQL
 mysql = MySQL(app)
 
+
+#---------------------------#
+# [website] Company Profile #
+#---------------------------#
 @app.route('/')
 def main():
     cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
     cur.execute('SELECT * FROM header')
     header = cur.fetchall()
+
+    cur.execute('SELECT * FROM jumbotron')
+    jumbotron = cur.fetchall()
+
+    cur.execute('SELECT * FROM tentang')
+    tentang = cur.fetchall()
+
     cur.close()
-    return render_template('index.html', header=header)
+    return render_template('index.html', header=header, jumbotron=jumbotron, tentang=tentang)
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    # Output message if something goes wrong...
-    msg = ''
 
-    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
-        # Create variables for easy access
-        username = request.form['username']
-        password = request.form['password']
-
-        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM accounts WHERE username = %s AND password = %s', (username, password,))
-        # Fetch one record and return result
-        account = cursor.fetchone()
-
-        if account:
-            # Create session data, we can access this data in other routes
-            session['loggedin'] = True
-            session['id'] = account['id']
-            session['username'] = account['username']
-            # Redirect to home page
-            return redirect(url_for('home'))
-        else:
-            # Account doesnt exist or username/password incorrect
-            msg = 'Incorrect username/password!'
-
-    return render_template('login.html', msg=msg)
-
-@app.route('/logout')
-def logout():
-    # Remove session data, this will log the user out
-   session.pop('loggedin', None)
-   session.pop('id', None)
-   session.pop('username', None)
-   # Redirect to login page
-   return redirect(url_for('login'))
-   
-
-# http://localhost:5000/pythinlogin/register - this will be the registration page, we need to use both GET and POST requests
-@app.route('/register', methods=['GET', 'POST'])
+#--------------------#
+# [website] Register #
+#--------------------#
+#this will be the registration page, we need to use both GET and POST requests
+@app.route('/web/register', methods=['GET', 'POST'])
 def register():
     # Output message if something goes wrong...
     msg = ''
@@ -105,6 +80,54 @@ def register():
     return render_template('register.html', msg=msg)
 
 
+#-----------------#
+# [website] Login #
+#-----------------#
+@app.route('/web/login', methods=['GET', 'POST'])
+def login():
+    # Output message if something goes wrong...
+    msg = ''
+
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
+        # Create variables for easy access
+        username = request.form['username']
+        password = request.form['password']
+
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM accounts WHERE username = %s AND password = %s', (username, password,))
+        # Fetch one record and return result
+        account = cursor.fetchone()
+
+        if account:
+            # Create session data, we can access this data in other routes
+            session['loggedin'] = True
+            session['id'] = account['id']
+            session['username'] = account['username']
+            # Redirect to home page
+            return redirect(url_for('home'))
+        else:
+            # Account doesnt exist or username/password incorrect
+            msg = 'Incorrect username/password!'
+
+    return render_template('login.html', msg=msg)
+
+
+#------------------#
+# [website] Logout #
+#------------------#
+@app.route('/web/logout')
+def logout():
+    # Remove session data, this will log the user out
+   session.pop('loggedin', None)
+   session.pop('id', None)
+   session.pop('username', None)
+   # Redirect to login page
+   return redirect(url_for('login'))
+   
+
+#-------------#
+# [Dashboard] Main #
+#-------------#
 @app.route('/dashboard', methods=['GET', 'POST'])
 def home():
     # Check if user is loggedin
@@ -114,7 +137,9 @@ def home():
     # User is not loggedin redirect to login page
     return redirect(url_for('login'))
 
-
+#-------------------------#
+# [Dashboard] Admin Profile #
+#-------------------------#
 @app.route('/dashboard/profile')
 def profile():
     # Check if user is loggedin
@@ -128,7 +153,23 @@ def profile():
     # User is not loggedin redirect to login page
     return redirect(url_for('login'))
 
-@app.route('/header/edit/<id>', methods=[ 'POST','GET'])
+
+#--------------------#
+# [Dashboard] Header #
+#--------------------#
+@app.route('/dashboard/header')
+def header():
+    cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cur.execute('SELECT * FROM header')
+    data = cur.fetchall()
+    cur.close()
+    return render_template('header.html', header = data)
+
+
+#-------------------------#
+# [Dashboard] Header Edit #
+#-------------------------#
+@app.route('/dashboard/header/edit/<id>', methods=[ 'POST','GET'])
 def header_edit(id):
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
     cursor.execute('SELECT * FROM header WHERE id = %s', (id,))
@@ -136,10 +177,12 @@ def header_edit(id):
     cursor.close()
     print(data[0])
     return render_template('header_edit.html', header = data[0])
-    
 
-#update beta
-@app.route('/header/update/<id>', methods=[ 'POST'])
+
+#---------------------------#
+# [Dashboard] Header Update #
+#---------------------------#
+@app.route('/dashboard/header/update/<id>', methods=[ 'POST'])
 def header_update(id):
 
     if request.method == 'POST':
@@ -165,14 +208,63 @@ def header_update(id):
         return redirect(url_for('header'))
 
 
-@app.route('/dashboard/header')
-def header():
+#-----------------------#
+# [Dashboard] Jumbotron #
+#-----------------------#
+@app.route('/dashboard/jumbotron')
+def jumbotron():
     cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cur.execute('SELECT * FROM header')
+    cur.execute('SELECT * FROM jumbotron')
     data = cur.fetchall()
     cur.close()
-    return render_template('header.html', header = data)
+    return render_template('jumbotron.html', jumbotron = data)
 
+
+#----------------------------#
+# [Dashboard] Jumbotron Edit #
+#----------------------------#
+@app.route('/dashboard/jumbotron/edit/<id>', methods=[ 'POST','GET'])
+def jumbotron_edit(id):
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT * FROM jumbotron WHERE id = %s', (id,))
+    data = cursor.fetchall()
+    cursor.close()
+    print(data[0])
+    return render_template('jumbotron_edit.html', jumbotron = data[0])
+
+
+#------------------------------#
+# [Dashboard] Jumbotron Update #
+#------------------------------#
+@app.route('/dashboard/jumbotron/update/<id>', methods=[ 'POST'])
+def jumbotron_update(id):
+    if request.method == 'POST':
+        tagline = request.form['tagline']
+        caption = request.form['caption']
+        
+        #gambar = request.files['gambar']
+        #os.makedirs(os.path.join(app.instance_path, 'none'), exist_ok=True)
+        #gambar.save(os.path.join(app.instance_path, 'none', secure_filename(gambar.filename)))
+
+        #gambar = request.files['gambar']
+        #gambar.save(secure_filename(gambar.filename))
+        #gambar = gambar.filename
+
+        gambar = request.files['gambar']
+        gambar.save(os.path.join(UPLOADS_PATH, secure_filename(gambar.filename)))
+        gambar = gambar.filename
+
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('UPDATE jumbotron SET tagline = %s, caption = %s, gambar = %s WHERE id = %s', (tagline, caption, gambar, id,))
+        mysql.connection.commit()
+  
+        cursor.close()
+        return redirect(url_for('jumbotron'))
+
+
+#-------------------------#
+# [Website] Pesan / Kirim #
+#-------------------------#
 @app.route('/kirimpesan', methods=['GET', 'POST'])
 def kirimpesan():
     if request.method == 'POST':
@@ -183,13 +275,12 @@ def kirimpesan():
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('INSERT INTO pesan VALUES (NULL, %s, %s, %s, %s)', (nama, email, hp, pesan,))
         mysql.connection.commit()
-
     return redirect(url_for('main'))
 
-@app.route('/dashboard/jumbotron')
-def jumbotron():
-    return render_template('jumbotron.html')
 
+#----------------------------#
+# [Dashboard] Pesan / Terima #
+#----------------------------#
 @app.route('/dashboard/pesan')
 def pesan():
     cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
@@ -198,15 +289,51 @@ def pesan():
 
     cur.close()
     return render_template('pesan.html', pesan = data)
-    
-@app.route('/img/<int:img_id>')
-def serve_img(img_id):
-    
-    pass
 
+
+#---------------------#
+# [Dashboard] Tentang #
+#---------------------#
 @app.route('/dashboard/tentang')
 def tentang():
-    return render_template('tentang.html')
+    cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cur.execute('SELECT * FROM tentang')
+    data = cur.fetchall()
+
+    cur.close()
+    return render_template('tentang.html', tentang = data)
+
+
+#--------------------------#
+# [Dashboard] Tentang Edit #
+#--------------------------#
+@app.route('/dashboard/tentang/edit/<id>', methods=[ 'POST','GET'])
+def tentang_edit(id):
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT * FROM tentang WHERE id = %s', (id,))
+    data = cursor.fetchall()
+    cursor.close()
+    print(data[0])
+    return render_template('tentang_edit.html', tentang = data[0])
+
+
+@app.route('/dashboard/tentang/update/<id>', methods=[ 'POST'])
+def tentang_update(id):
+    if request.method == 'POST':
+        judul = request.form['judul']
+        isi = request.form['isi']
+        moto1 = request.form['moto1']
+        moto2 = request.form['moto2']
+        moto3 = request.form['moto3']
+
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('UPDATE tentang SET judul = %s, isi = %s, moto1 = %s, moto2 = %s, moto3 = %s WHERE id = %s', (judul, isi, moto1, moto2 , moto3, id,))
+        mysql.connection.commit()
+  
+        cursor.close()
+        return redirect(url_for('tentang'))
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)

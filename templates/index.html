@@ -20,7 +20,10 @@
             <div class="container">
                 <div class="nav-wrapper home">
                   {% for data in header %} 
-                  <img src="{{ url_for('static', filename=data.gambar) }}" style="max-width:63px;max-height:63px" href="#home">
+                  <a href="">
+                    <img src="{{ url_for('static', filename=data.gambar) }}" style="max-width:63px;max-height:63px" href="#home">
+                  </a>
+                  
                    
                   <a href="#home" class="brand-logo">{{data.nama}}</a>
                   {% endfor %}
@@ -51,27 +54,15 @@
       <!-- slider -->
       <div class="slider">
         <ul class="slides">
+          {% for data in jumbotron %} 
           <li>
-            <img src="{{ url_for('static', filename='img/slider/1.jpg') }}"> <!-- random image -->
+            <img src="{{ url_for('static', filename=data.gambar) }}"> <!-- random image -->
             <div class="caption center-align">
-              <h3>Rayakan Moment Terbaikmu Bersama RiethA Cake</h3>
-              <h5 class="light grey-text text-lighten-3">Setiap Rasa Adalah Cerita.</h5>
+              <h3>{{data.tagline}}</h3>
+              <h5 class="light grey-text text-lighten-3">{{data.caption}}</h5>
             </div>
           </li>
-          <li>
-              <img src="{{ url_for('static', filename='img/slider/2.jpg') }}"> <!-- random image -->
-              <div class="caption center-align">
-                <h3>Rayakan Moment Terbaikmu Bersama RiethA Cake</h3>
-                <h5 class="light grey-text text-lighten-3">Setiap Rasa Adalah Cerita.</h5>
-              </div>
-          </li>
-          <li>
-              <img src="{{ url_for('static', filename='img/slider/3.jpg') }}"> <!-- random image -->
-              <div class="caption center-align">
-                <h3>Rayakan Moment Terbaikmu Bersama RiethA Cake</h3>
-                <h5 class="light grey-text text-lighten-3">Setiap Rasa Adalah Cerita.</h5>
-              </div>
-          </li>
+          {% endfor %}
         </ul>
       </div>
       <!-- akhir slider -->
@@ -79,26 +70,27 @@
       <!-- about us -->
       <section id="about" class="about scrollspy grey lighten-3">
         <div class="container">
+          {% for data in tentang %}
           <div class="row">
             <h3 class="center light grey-text text-darken-3">Tentang</h3>
             <div class="col m6 light">
-              <h5>Percayakan Pada Profesional</h5>
+              <h5>{{data.judul}}</h5>
               <p class="about-page">
-                Perusahaan kami merupakan profesional yang bergerak pada kuliner roti dengan kualitas terbaik. Dengan melayani berbagai macam aneka roti baik sebagai hadiah maupun konsumsi kami siap memberikan yang terbaik untuk anda.  
+                {{data.isi}}
               </p>
             </div>
             <div class="col m6 light">
-              <p>KUALITAS</p>
+              <p>{{data.moto1}}</p>
                 <div class="progress">
                   <div class="determinate" style="width: 95%">
                   </div>
                 </div>
-              <p>PROFESIONAL</p>
+              <p>{{data.moto2}}</p>
                 <div class="progress">
                   <div class="determinate" style="width: 85%">
                   </div>
                 </div>
-              <p>KECEPATAN</p>
+              <p>{{data.moto3}}</p>
                 <div class="progress">
                   <div class="determinate" style="width: 85%">
                   </div>
@@ -106,6 +98,7 @@
               </div>
             </div>
           </div>
+          {% endfor %}
         </div>
       </section>
       <!-- akhir about -->

@@ -223,35 +223,31 @@
                       </tr>
                     </thead>
                     <tbody>
+                      {% for data in jumbotron %}
                       <tr>
-                        <td>1.</td>
-                        <td>Rayakan Moment Terbaikmu Bersama RiethA Cake</td>
-                        <td>Setiap Rasa Adalah Cerita.</td>
-                        <td>Gambar1</td>
-                        <td><button type="submit" class="btn btn-primary moss-3">Edit</button></td>
+                        <td>{{data.id}}</td>
+                        <td>{{data.tagline}}</td>
+                        <td>{{data.caption}}</td>
+                        <td><img src="{{ url_for('static', filename=data.gambar) }}" class="img-fluid" style="max-width:63px;max-height:63px" alt=""></td>
+                        <td>
+                          <a href="/dashboard/jumbotron/edit/{{data.id}}">
+                            <button type="submit" class="btn btn-primary moss-3">Edit</button>
+                          </a>
+                        </td>
                       </tr>
-                      <tr>
-                        <td>2.</td>
-                        <td>Rayakan Moment Terbaikmu Bersama RiethA Cake</td>
-                        <td>Setiap Rasa Adalah Cerita.</td>
-                        <td>Gambar2</td>
-                        <td><button type="submit" class="btn btn-primary moss-3">Edit</button></td>
-                      </tr>
-                      <tr>
-                        <td>3.</td>
-                        <td>Rayakan Moment Terbaikmu Bersama RiethA Cake</td>
-                        <td>Setiap Rasa Adalah Cerita.</td>
-                        <td>Gambar3</td>
-                        <td><button type="submit" class="btn btn-primary moss-3">Edit</button></td>
-                      </tr>
+                      {% endfor %}
                     </tbody>
                   </table>
                 </div>
                 <!-- /.card-body -->
               </div>
               <!-- /.card -->
-
-
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <!-- general form elements -->
 
   </div>
