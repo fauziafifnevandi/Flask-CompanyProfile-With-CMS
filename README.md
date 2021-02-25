@@ -27,7 +27,7 @@
 * pip install marshmallow-sqlalchemy
 * pip install Flask-MySQL
 
-**(atau jika menemui eror "No Module bla bla bla.." copy paste ke google nanti diarahkan install package pip sesuatu.)
+**(atau jika menemui eror "No Module bla bla bla.." copy paste ke google nanti diarahkan install package pip sesuatu.)**
 
 3. Download SQL reitha_cake.sql dari github
 
