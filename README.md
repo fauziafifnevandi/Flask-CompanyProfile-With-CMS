@@ -6,10 +6,8 @@ List Screenshot:
 * [login](#login)
 * [register](#register)
 * [dashboard](#dashboard)
+  * bakso malang
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum, nibh eu commodo posuere, ligula ante dictum neque, vitae pharetra mauris mi a velit. 
-
-Phasellus eleifend egestas diam, id tincidunt arcu dictum quis.
 
 # Website
 ## [home](#Flask-CompanyProfile-With-CMS)
