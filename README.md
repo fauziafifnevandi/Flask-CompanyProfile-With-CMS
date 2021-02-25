@@ -12,7 +12,7 @@ List Screenshot:
 
 # Website
 ## [home](#Flask-CompanyProfile-With-CMS)
-![alt text](https://raw.githubusercontent.com/fauziafifnevandi/Flask-CompanyProfile-With-CMS/main/screenshoot/website.jpg)
+![alt text](https://raw.githubusercontent.com/fauziafifnevandi/Simple-Image-Part-Cutter/master/ss%20web/home.jpg)
 
 # Login
 ## [home](#Flask-CompanyProfile-With-CMS)
