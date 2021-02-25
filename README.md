@@ -1,5 +1,5 @@
 # Flask-CompanyProfile-With-CMS
-## Build website company profile with python (flask), css framework materialize and bootstrap adminlte
+## Build Website Company Profile With Python(Flask), CSS Framework(Materialize & Bootstrap AdminLTE)
 
 List Screenshot:
 * [Website](#website)
@@ -7,8 +7,13 @@ List Screenshot:
 * [register](#register)
 * [dashboard](#dashboard)
   * [header](#header)
-  * [header](#header)
-
+  * [jumbotron](#jumbotron)
+  * [pesan](#pesan)
+  * [tentang](#tentang)
+  * [klien](#klien)
+  * [pelayanan](#pelayanan)
+  * [produk](#produk)
+  * [hubungi_kami](#hubungi_kami)
 
 # Website
 ### [Home](#Flask-CompanyProfile-With-CMS)
@@ -16,11 +21,44 @@ List Screenshot:
 
 # Login
 ### [Home](#Flask-CompanyProfile-With-CMS)
-![alt text](https://raw.githubusercontent.com/fauziafifnevandi/Flask-CompanyProfile-With-CMS/main/screenshoot/login.png)
+![alt text](https://raw.githubusercontent.com/fauziafifnevandi/Simple-Image-Part-Cutter/master/ss%20web/login.png)
 
-3.Register
+# Register
+### [Home](#Flask-CompanyProfile-With-CMS)
 ![alt text](https://raw.githubusercontent.com/fauziafifnevandi/Flask-CompanyProfile-With-CMS/main/screenshoot/register.png)
 
-4.Dashboard
+# Dashboard
+### [Home](#Flask-CompanyProfile-With-CMS)
 ![alt text](https://raw.githubusercontent.com/fauziafifnevandi/Flask-CompanyProfile-With-CMS/main/screenshoot/dashboard.png)
 
+## Header
+### [Home](#Flask-CompanyProfile-With-CMS)
+![alt text](https://raw.githubusercontent.com/fauziafifnevandi/Flask-CompanyProfile-With-CMS/main/screenshoot/dashboard.png)
+
+## Jumbotron
+### [Home](#Flask-CompanyProfile-With-CMS)
+![alt text](https://raw.githubusercontent.com/fauziafifnevandi/Simple-Image-Part-Cutter/master/ss%20web/jumbotron.png)
+
+## Pesan
+### [Home](#Flask-CompanyProfile-With-CMS)
+![alt text](https://raw.githubusercontent.com/fauziafifnevandi/Simple-Image-Part-Cutter/master/ss%20web/pesan.png)
+
+## Tentang
+### [Home](#Flask-CompanyProfile-With-CMS)
+![alt text](https://raw.githubusercontent.com/fauziafifnevandi/Simple-Image-Part-Cutter/master/ss%20web/tentang.png)
+
+## Klien
+### [Home](#Flask-CompanyProfile-With-CMS)
+![alt text](https://raw.githubusercontent.com/fauziafifnevandi/Simple-Image-Part-Cutter/master/ss%20web/klien.png)
+
+## Pelayanan
+### [Home](#Flask-CompanyProfile-With-CMS)
+![alt text](https://raw.githubusercontent.com/fauziafifnevandi/Simple-Image-Part-Cutter/master/ss%20web/pelayanan.png)
+
+## Produk
+### [Home](#Flask-CompanyProfile-With-CMS)
+![alt text](https://raw.githubusercontent.com/fauziafifnevandi/Simple-Image-Part-Cutter/master/ss%20web/dashboard_produk.png)
+
+## Hubungi_Kami
+### [Home](#Flask-CompanyProfile-With-CMS)
+![alt text](https://raw.githubusercontent.com/fauziafifnevandi/Simple-Image-Part-Cutter/master/ss%20web/dashboard_hubungikami.png)
