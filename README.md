@@ -1,7 +1,14 @@
 # Flask-CompanyProfile-With-CMS
 #### Build Website Company Profile With Python(Flask), CSS Framework(Materialize & Bootstrap AdminLTE)
 
-#### Foldering Map
+#### Keywoard
+- FLASK
+- CRUD        (Including Image)
+- Materialize (Main Web)
+- AdminLTE2   (Control Management System Web)
+- HTML & CSS 
+
+#### Foldering Map:
 ![alt text](https://raw.githubusercontent.com/fauziafifnevandi/Simple-Image-Part-Cutter/master/ss%20web/waw.png)
             
 #### List Screenshot / Feature:
@@ -18,7 +25,7 @@
   * [Produk](#produk)
   * [Hubungi_kami](#hubungi_kami)
  
-#### Prerequest To Install
+#### Prerequest To Install:
 1. Saya menggunakan XAMPP Control Panel 3.2.4 (XAMMP 7) -> Link Download https://www.youwindowsworld.com/en/downloads/software/development/xampp
 2. Install package manager bisa melalui file req.txt dari github atau berikut list:
 * pip install Flask
@@ -31,12 +38,12 @@
 
 3. Download SQL reitha_cake.sql dari github
 
-#### How To Install
+#### How To Install:
 1. Import hasil download reitha_cake.sql ke MySQL / MariaDB / localhostphpmyadmin or anything
 2. Buka directori file menggunakan CMD or Anaconda
 3. ketik "python web.py"
 
-#### Bug
+#### Bug:
 1. Upload foto tidak boleh kosong
 2. Bagian foto profil dashboard beberapa masih statis
 
