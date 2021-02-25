@@ -19,7 +19,7 @@
   * [Hubungi_kami](#hubungi_kami)
  
 #### Prerequest To Install:
-1. Saya menggunakan XAMPP Control Panel 3.2.4 (XAMMP 7) -> Link Download https://www.youwindowsworld.com/en/downloads/software/development/xampp
+1. Saya menggunakan XAMPP Control Panel 3.2.4. (XAMMP 7) -> Link Download https://www.youwindowsworld.com/en/downloads/software/development/xampp
 2. Install package manager bisa melalui file req.txt dari github atau berikut list:
 * pip install Flask
 * pip install Flask-SQLAlchemy
@@ -29,23 +29,24 @@
 
 **(atau jika menemui eror "No Module bla bla bla.." copy paste ke google nanti diarahkan install package pip sesuatu.)**
 
-3. Download SQL reitha_cake.sql dari github
+3. Download SQL reitha_cake.sql dari github.
 
 #### How To Install:
-1. Import hasil download reitha_cake.sql ke MySQL / MariaDB / localhostphpmyadmin or anything
-2. Buka directori file menggunakan CMD or Anaconda
-3. ketik "python web.py"
+1. Import hasil download reitha_cake.sql ke MySQL / MariaDB / localhostphpmyadmin or anything.
+2. Buka directori file menggunakan CMD or Anaconda.
+3. ketik "python web.py".
 
 #### Bug:
-1. Upload foto tidak boleh kosong
-2. Bagian foto profil dashboard beberapa masih statis
+1. Penamaan gambar upload harus berbeda satu sama lain karena seluruhnya ada di satu folder yang sama.
+2. Upload foto tidak boleh kosong.
+3. Bagian foto profil dashboard beberapa masih statis.
 
 #### Keywoard
-- FLASK
-- CRUD        (Including Image)
-- Materialize (Main Web)
-- AdminLTE2   (Control Management System Web)
-- HTML & CSS  (https://github.com/fauziafifnevandi/Web-Tutorial-HTML-CSS)
+- Python FLASK (MicroFramework)
+- CRUD         (Including Image)
+- Materialize  (Main Web)
+- AdminLTE2    (Control Management System Web)
+- HTML & CSS   (https://github.com/fauziafifnevandi/Web-Tutorial-HTML-CSS)
 
 
 # Website
