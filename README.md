@@ -1,7 +1,6 @@
 # Flask-CompanyProfile-With-CMS
 Build website company profile with python (flask), css framework materialize and bootstrap adminlte
 
-[create an anchor](#anchors-in-markdown)
 
 
 # [Heading Link](#section-i-want)
