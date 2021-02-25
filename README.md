@@ -8,10 +8,11 @@ List Screenshot:
 * [dashboard](#dashboard)
 
 
-# website
+# Website
+## [home](#Flask-CompanyProfile-With-CMS)
 ![alt text](https://raw.githubusercontent.com/fauziafifnevandi/Flask-CompanyProfile-With-CMS/main/screenshoot/website.jpg)
 
-# login
+# Login
 ## [home](#Flask-CompanyProfile-With-CMS)
 ![alt text](https://raw.githubusercontent.com/fauziafifnevandi/Flask-CompanyProfile-With-CMS/main/screenshoot/login.png)
 
