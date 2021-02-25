@@ -1,10 +1,10 @@
 # Flask-CompanyProfile-With-CMS
-## Build Website Company Profile With Python(Flask), CSS Framework(Materialize & Bootstrap AdminLTE)
+### Build Website Company Profile With Python(Flask), CSS Framework(Materialize & Bootstrap AdminLTE)
 
-## Foldering Map
+### Foldering Map
 ![alt text](https://raw.githubusercontent.com/fauziafifnevandi/Simple-Image-Part-Cutter/master/ss%20web/waw.png)
             
-## List Screenshot / Feature:
+### List Screenshot / Feature:
 * [Website](#website)
 * [Login](#login)
 * [Register](#register)
@@ -18,7 +18,7 @@
   * [Produk](#produk)
   * [Hubungi_kami](#hubungi_kami)
  
-## Prerequest To Install
+### Prerequest To Install
 1. Saya menggunakan XAMPP Control Panel 3.2.4 (XAMMP 7) -> Link Download https://www.youwindowsworld.com/en/downloads/software/development/xampp
 2. Install package manager bisa melalui file req.txt dari github atau berikut list:
 * pip install Flask
@@ -26,7 +26,8 @@
 * pip install flask-marshmallow
 * pip install marshmallow-sqlalchemy
 * pip install Flask-MySQL
-atau jika menemui eror "No Module bla bla bla.." copy paste ke google nanti diarahkan install package pip sesuatu.
+**(atau jika menemui eror "No Module bla bla bla.." copy paste ke google nanti diarahkan install package pip sesuatu.)
+
 3. Download SQL reitha_cake.sql dari github
 
 ## How To Install
