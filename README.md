@@ -1,13 +1,6 @@
 # Flask-CompanyProfile-With-CMS
 #### Build Website Company Profile With Python(Flask), CSS Framework(Materialize & Bootstrap AdminLTE)
 
-#### Keywoard
-- FLASK
-- CRUD        (Including Image)
-- Materialize (Main Web)
-- AdminLTE2   (Control Management System Web)
-- HTML & CSS 
-
 #### Foldering Map:
 ![alt text](https://raw.githubusercontent.com/fauziafifnevandi/Simple-Image-Part-Cutter/master/ss%20web/waw.png)
             
@@ -46,6 +39,13 @@
 #### Bug:
 1. Upload foto tidak boleh kosong
 2. Bagian foto profil dashboard beberapa masih statis
+
+#### Keywoard
+- FLASK
+- CRUD        (Including Image)
+- Materialize (Main Web)
+- AdminLTE2   (Control Management System Web)
+- HTML & CSS  (https://github.com/fauziafifnevandi/Web-Tutorial-HTML-CSS)
 
 
 # Website
