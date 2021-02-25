@@ -17,7 +17,9 @@
     <section id="login" class="login moss-1 scrollspy">
         <div class="container">
             <div class="logo center-align">
-                <img src="{{ url_for('static', filename='img/dashboard/logo_login.jpg') }}" alt="">
+              {% for data in header %}
+                <img src="{{ url_for('static', filename=data.gambar) }}" alt="">
+              {% endfor %}
             </div>
           <h3 class="light moss-1 center">Halaman Login</h3>
           <div class="row">

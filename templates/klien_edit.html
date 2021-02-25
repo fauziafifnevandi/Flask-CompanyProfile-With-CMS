@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Python Flask Employee Create, read, update and delete (CRUD) using pymysql</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style_dashboard.css') }}">
+
+  </head>
+  <body>
+ 
+    <!-- NAVIGATION  -->
+ 
+    <div class="container pt-4 ">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+              <div class="card card-body moss-1">
+                <form action="/dashboard/klien/update/{{klien.id}}"  method="POST" enctype="multipart/form-data">
+                  <h5 class="moss-5">Klien Ke-{{klien.id}}</h5>
+                  <div class="form-group">
+                    <label for="text" class="moss-5">Nama</label>
+                    <input type="text" name="nama" value="{{klien.nama}}" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="text" class="moss-5">Gambar</label>
+                    <input type="file" name="gambar" value="{{klien.gambar}}" class="form-control">
+                    <img src="{{ url_for('static', filename=klien.gambar) }}" class="img-fluid" style="padding-top: 17px;max-width:100px;max-height:100px" alt="">
+                  </div>
+                    <button type="submit" class="btn btn-primary btn-block moss-3">
+                      Update
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+  </body>
+</html>

@@ -18,6 +18,7 @@
             <div class="col-md-4 offset-md-4">
               <div class="card card-body moss-1">
                 <form action="/dashboard/header/update/{{header.id}}"  method="POST" enctype="multipart/form-data">
+                  <h5 class="moss-5">HEADER</h5>
                   <div class="form-group">
                     <label for="text" class="moss-5">Nama Header</label>
                     <input type="text" name="nama" value="{{header.nama}}" class="form-control">
@@ -25,6 +26,7 @@
                   <div class="form-group">
                     <label for="text" class="moss-5">Gambar Header</label>
                     <input type="file" name="gambar" value="{{header.gambar}}" class="form-control">
+                    <img src="{{ url_for('static', filename=header.gambar) }}" class="img-fluid" style="padding-top: 17px;max-width:100px;max-height:100px" alt="">
                   </div>
                     <button type="submit" class="btn btn-primary btn-block moss-3">
                       Update

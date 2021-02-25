@@ -105,20 +105,17 @@
 
       <!-- clients -->
       <div id="clients" class="parallax-container scrollspy">
-        <div class="parallax"><img src="{{ url_for('static', filename='img/slider/4.png') }}"></div>
-
+        {% for data in paralax %}
+        <div class="parallax"><img src="{{ url_for('static', filename=data.gambar) }}"></div>
+        {% endfor %}
         <div class="container clients">
           <h3 class="center light text-darken3">Klien</h3>
           <div class="row">
+            {% for data in klien %}
             <div class="col m4 s12 center">
-              <img src="{{ url_for('static', filename='img/clients/gofood.png') }}" alt="gojek">
+              <img src="{{ url_for('static', filename=data.gambar) }}" alt="gojek">
             </div>
-            <div class="col m4 s12 center">
-              <img src="{{ url_for('static', filename='img/clients/grabfood.png') }}" alt="tokopedia">
-            </div>
-            <div class="col m4 s12 center">
-              <img src="{{ url_for('static', filename='img/clients/shope.png') }}" alt="traveloka">
-            </div>
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -129,33 +126,17 @@
         <div class="container">
           <div class="row">
             <h3 class="light center text-darken3">Pelayanan</h3>
+            {% for data in pelayanan %}
             <div class="col m4 s12">
               <div class="card-panel center">
-                <i class="material-icons medium">verified_user</i>
-                <h5>Kualitas</h5>
+                <i class="material-icons medium">{{data.simbol}}</i>
+                <h5>{{data.judul}}</h5>
                 <p>
-                  Dengan menggunakan bahan berkualitas untuk menjaga kualitas produk
+                  {{data.isi}}
                 </p>
               </div>
             </div>
-            <div class="col m4 s12">
-              <div class="card-panel center">
-                <i class="material-icons medium">work</i>
-                <h5>Profesional</h5>
-                <p>
-                  Berpengalaman dalam melayani berbagai macam produk bagi konsumen kami
-                </p>
-              </div>
-            </div>
-            <div class="col m4 s12">
-              <div class="card-panel center">
-                <i class="material-icons medium">access_time</i>
-                <h5>Kecepatan</h5>
-                <p>
-                  Melayani dengan kecepatan yang sesuai dengan waktu pesanan untuk melayani anda semua
-                </p>
-              </div>
-            </div>
+            {% endfor %}
           </div>
         </div>
       </section>
@@ -168,32 +149,11 @@
         <div class="container">
           <h3 class="light center text-darken3">Produk</h3>
           <div class="row">
+            {% for data in produk %}
             <div class="col m3 s12">
-              <img src="{{ url_for('static', filename='img/portfolio/1.jpg') }}" class="responsive-img materialboxed">
+              <img src="{{ url_for('static', filename=data.gambar) }}" class="responsive-img materialboxed">
             </div>
-            <div class="col m3 s12">
-              <img src="{{ url_for('static', filename='img/portfolio/2.jpg') }}" class="responsive-img materialboxed">
-            </div>
-            <div class="col m3 s12">
-              <img src="{{ url_for('static', filename='img/portfolio/3.jpg') }}" class="responsive-img materialboxed">
-            </div>
-            <div class="col m3 s12">
-              <img src="{{ url_for('static', filename='img/portfolio/4.jpg') }}" class="responsive-img materialboxed">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col m3 s12">
-              <img src="{{ url_for('static', filename='img/portfolio/5.jpg') }}" class="responsive-img materialboxed">
-            </div>
-            <div class="col m3 s12">
-              <img src="{{ url_for('static', filename='img/portfolio/6.jpg') }}" class="responsive-img materialboxed">
-            </div>
-            <div class="col m3 s12">
-              <img src="{{ url_for('static', filename='img/portfolio/7.jpg') }}" class="responsive-img materialboxed">
-            </div>
-            <div class="col m3 s12">
-              <img src="{{ url_for('static', filename='img/portfolio/8.jpg') }}" class="responsive-img materialboxed">
-            </div>
+            {% endfor %}
           </div>
         </div>
       </section>
@@ -202,23 +162,26 @@
       <!-- contact us -->
       <section id="contact" class="contact grey lighten-3 scrollspy">
         <div class="container">
+          
           <h3 class="light text-darken-3 center">Hubungi Kami</h3>
           <div class="row">
             <div class="col m5 s12">
               <div class="card-panel moss-2 center white-text">
                 <i class="material-icons">email</i>
-                <h4>Kontak</h4>
+                {% for data in hubungi_kami %}
+                <h4>{{data.judul}}</h4>
                 <p>
-                  Fitur layanan hubung untuk memberikan pesan dari para pelanggan kepada kami. 
+                  {{data.isi}} 
                 </p>
               </div>
               <ul class="collection with-header">
-                <li class="collection-header">Informasi Kantor</li>
-                <li class="collection-item">RiethA Cake</li>
-                <li class="collection-item">Jl.Setia Budi No.12</li>
-                <li class="collection-item">Jakarta Pusat, Indonesia</li>
+                <li class="collection-header">{{data.judul_informasi}}</li>
+                <li class="collection-item">{{data.nama_toko}}</li>
+                <li class="collection-item">{{data.alamat_toko}}</li>
+                <li class="collection-item">{{data.kota_toko}}</li>
               </ul>
             </div>
+            {% endfor %}
 
             <div class="col m7 s12">
               <form action="{{ url_for('kirimpesan')}}" method="POST">
@@ -226,7 +189,7 @@
                   <h5>Silakan Untuk Mengisi Form</h5>
                   <div class="input-field">
                     <input type="text" name="nama" id="name" required class="validate">
-                    <label for="nama">Nama</label>
+                    <label for="name">Nama</label>
                   </div>
                   <div class="input-field">
                     <input type="email" name="email" id="email" required class="validate">
@@ -234,10 +197,10 @@
                   </div>
                   <div class="input-field">
                     <input type="tel" name="hp" id="hp" required class="validate">
-                    <label for="hp">Nomor Handphone</label>
+                    <label for="tel">Nomor Handphone</label>
                   </div>
                   <div class="input-field">
-                    <input type="tel" name="pesan" id="pesan" required class="validate">
+                    <input type="text" name="pesan" id="pesan" required class="validate">
                     <label for="pesan">Pesan</label>
                   </div>
                   <button type="submit" class="btn moss-2">Send</button>

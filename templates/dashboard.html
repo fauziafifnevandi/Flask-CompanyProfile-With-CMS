@@ -80,8 +80,11 @@
   <aside class="main-sidebar moss-1 elevation-4">
     <!-- Brand Logo -->
     <a href="{{ url_for('main') }}" class="brand-link">
-      <img src="{{ url_for('static', filename='img/loga.jpg') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light moss-5">ReithA Cake</span>
+      {% for data in header %}
+      <img src="{{ url_for('static', filename=data.gambar) }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+     
+      <span class="brand-text font-weight-light moss-5">{{data.nama}}</span>
+      {% endfor %}
     </a>
 
     <!-- Sidebar -->
@@ -147,7 +150,7 @@
                 </a>
               </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ url_for('klien') }}" class="nav-link">
               <i class="moss-5 nav-icon fas fa-table"></i>
               <p class="moss-5">
                 Klien
@@ -156,7 +159,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ url_for('pelayanan') }}" class="nav-link">
               <i class="moss-5 nav-icon fas fa-book"></i>
               <p class="moss-5">
                 Pelayanan
@@ -165,7 +168,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ url_for('produk') }}" class="nav-link">
               <i class="moss-5 nav-icon fas fa-birthday-cake"></i>
               <p class="moss-5">
                 Produk
@@ -174,7 +177,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ url_for('hubungi_kami') }}" class="nav-link">
               <i class="moss-5 nav-icon fas fa-sticky-note"></i>
               <p class="moss-5">
                 Hubungi Kami

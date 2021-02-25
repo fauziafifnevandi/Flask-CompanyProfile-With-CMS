@@ -18,6 +18,7 @@
             <div class="col-md-4 offset-md-4">
               <div class="card card-body moss-1">
                 <form action="/dashboard/jumbotron/update/{{jumbotron.id}}"  method="POST" enctype="multipart/form-data">
+                  <h5 class="moss-5">Jumbotron Ke-{{jumbotron.id}}</h5>
                   <div class="form-group">
                     <label for="text" class="moss-5">Tagline</label>
                     <input type="text" name="tagline" value="{{jumbotron.tagline}}" class="form-control">
@@ -29,6 +30,7 @@
                   <div class="form-group">
                     <label for="text" class="moss-5">Gambar</label>
                     <input type="file" name="gambar" value="{{jumbotron.gambar}}" class="form-control">
+                    <img src="{{ url_for('static', filename=jumbotron.gambar) }}" class="img-fluid" style="padding-top: 17px;max-width:100px;max-height:100px" alt="">
                   </div>
                     <button type="submit" class="btn btn-primary btn-block moss-3">
                       Update
