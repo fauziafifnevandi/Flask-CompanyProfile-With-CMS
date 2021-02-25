@@ -19,4 +19,4 @@ Website, Login, Register, Dashboard
 4.Dashboard
 ![alt text](https://raw.githubusercontent.com/fauziafifnevandi/Flask-CompanyProfile-With-CMS/main/screenshoot/dashboard.png)
 
-[create an anchor](#anchors-in-markdown)
+# create an anchor
