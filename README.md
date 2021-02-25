@@ -14,10 +14,10 @@ List Image:
 Website, Login, Register, Dashboard
 
 
-### [website]
+# website
 ![alt text](https://raw.githubusercontent.com/fauziafifnevandi/Flask-CompanyProfile-With-CMS/main/screenshoot/website.jpg)
 
-### [login]
+# login
 ![alt text](https://raw.githubusercontent.com/fauziafifnevandi/Flask-CompanyProfile-With-CMS/main/screenshoot/login.png)
 
 3.Register
