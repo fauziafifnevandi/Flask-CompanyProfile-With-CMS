@@ -1,8 +1,8 @@
 # Flask-CompanyProfile-With-CMS
 ## Build website company profile with python (flask), css framework materialize and bootstrap adminlte
 
-*## [Website](#website);
-*## [login](#login)
+* [Website](#website)
+* [login](#login)
 
 
 
@@ -14,7 +14,7 @@ List Image:
 Website, Login, Register, Dashboard
 
 
-1.Website
+### [website]
 ![alt text](https://raw.githubusercontent.com/fauziafifnevandi/Flask-CompanyProfile-With-CMS/main/screenshoot/website.jpg)
 
 ### [login]
