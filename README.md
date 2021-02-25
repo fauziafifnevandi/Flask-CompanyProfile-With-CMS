@@ -3,17 +3,17 @@
 
 List Screenshot:
 * [Website](#website)
-* [login](#login)
-* [register](#register)
-* [dashboard](#dashboard)
-  * [header](#header)
-  * [jumbotron](#jumbotron)
-  * [pesan](#pesan)
-  * [tentang](#tentang)
-  * [klien](#klien)
-  * [pelayanan](#pelayanan)
-  * [produk](#produk)
-  * [hubungi_kami](#hubungi_kami)
+* [Login](#login)
+* [Register](#register)
+* [Dashboard](#dashboard)
+  * [Header](#header)
+  * [Jumbotron](#jumbotron)
+  * [Pesan](#pesan)
+  * [Tentang](#tentang)
+  * [Klien](#klien)
+  * [Pelayanan](#pelayanan)
+  * [Produk](#produk)
+  * [Hubungi_kami](#hubungi_kami)
 
 # Website
 ### [Home](#Flask-CompanyProfile-With-CMS)
