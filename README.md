@@ -45,7 +45,7 @@
 - CRUD         (Including Image)
 - Materialize  (Main Web)
 - AdminLTE2    (Control Management System Web)
-- HTML & CSS   (https://github.com/fauziafifnevandi/Web-Tutorial-HTML-CSS)
+- HTML & CSS   
 
 
 # Website
