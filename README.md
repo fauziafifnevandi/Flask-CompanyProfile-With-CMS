@@ -26,10 +26,9 @@
 * pip install flask-marshmallow
 * pip install marshmallow-sqlalchemy
 * pip install Flask-MySQL
-
-**(atau jika menemui eror "No Module bla bla bla.." copy paste ke google nanti diarahkan install package pip sesuatu.)**
-
 3. Download SQL reitha_cake.sql dari github.
+
+**(jika menemui eror "No Module bla bla bla.." copy paste ke google nanti diarahkan install package pip sesuatu.)**
 
 #### How To Install:
 1. Import hasil download reitha_cake.sql ke MySQL / MariaDB / localhostphpmyadmin or anything.
@@ -46,7 +45,7 @@
 - CRUD         (Including Image)
 - Materialize  (Main Web)
 - AdminLTE2    (Control Management System Web)
-- HTML & CSS   (https://github.com/fauziafifnevandi/Web-Tutorial-HTML-CSS)
+- HTML & CSS   
 
 
 # Website
@@ -67,7 +66,7 @@
 
 ## Header
 ### [Home](#Flask-CompanyProfile-With-CMS)
-![alt text](https://raw.githubusercontent.com/fauziafifnevandi/Flask-CompanyProfile-With-CMS/main/screenshoot/dashboard.png)
+![alt text](https://raw.githubusercontent.com/fauziafifnevandi/Simple-Image-Part-Cutter/master/ss%20web/header.png)
 
 ## Jumbotron
 ### [Home](#Flask-CompanyProfile-With-CMS)
