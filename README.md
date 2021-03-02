@@ -38,7 +38,7 @@
 #### Bug:
 1. Penamaan gambar upload harus berbeda satu sama lain karena seluruhnya ada di satu folder yang sama.
 2. Upload foto tidak boleh kosong.
-3. Bagian foto profil dashboard beberapa masih statis.
+3. Bagian foto profil dashboard beberapa masih statis dan dashboard tidak berelasi dengan ID / akun.
 
 #### Keywoard
 - Python FLASK (MicroFramework)
