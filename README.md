@@ -32,7 +32,7 @@
 
 #### How To Install:
 1. Import hasil download reitha_cake.sql ke MySQL / MariaDB / localhostphpmyadmin or anything.
-2. Buka directori file menggunakan CMD or Anaconda.
+2. Buka directori file menggunakan CMD or Anaconda, aktifkan env yang sudah berisi req.txt
 3. ketik "python web.py".
 
 #### Bug:
