@@ -35,7 +35,7 @@
 2. Buka directori file menggunakan CMD or Anaconda, aktifkan env yang sudah berisi req.txt
 3. ketik "python web.py".
 
-#### Bug:
+#### Bugs:
 1. Penamaan gambar upload harus berbeda satu sama lain karena seluruhnya ada di satu folder yang sama.
 2. Upload foto tidak boleh kosong.
 3. Bagian foto profil dashboard beberapa masih statis dan dashboard tidak berelasi dengan ID / akun.
